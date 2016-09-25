@@ -8,9 +8,11 @@ RSpec.describe Report, type: :model do
     it { should_not accept_values_for(:started_at, nil, " ", '01/13/2016', 'john', 'john@example') }
   end
 
-  describe 'defaults' do
-    it 'started_at to today at 9am' do
-      expect(Report.new.started_at).to be_within(1).of(DateTime.current.change({ hour: 9 }))
+  describe '(class methods)' do
+    describe '.with_start_time' do
+      it 'defaults to today at 9am' do
+        expect(Report.with_start_time.started_at).to be_within(1).of(DateTime.current.change({ hour: 9 }))
+      end
     end
   end
 end

@@ -1,5 +1,5 @@
 class ReportsController < ApplicationController
   def new
-    @report = Report.new
+    @report = Report.with_start_time
   end
 end
