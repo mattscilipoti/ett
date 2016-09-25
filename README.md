@@ -1,24 +1,29 @@
-# README
+# The Emergent Task Timer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Where does all my time go?
 
-Things you may want to cover:
+> "If you’re working in a distracting environment, you’ve probably wondered what happened to the eight hours you just spent at work. The Emergent Task Timer (ETT) was designed to help answer that question. Using an interval timer, you log what you were doing every 15 minutes or so. You’ll quickly see where your time is going, and have a picture of what your day looked like. The results are often shocking!"
+-- David Seah, The Printable CEO, [on the Emergent Task Timer](http://davidseah.com/node/the-emergent-task-timer/)
 
-* Ruby version
 
-* System dependencies
+# For Fellow Developers
 
-* Configuration
+## Initial Setup
 
-* Database creation
+It's a rails 5 app:
 
-* Database initialization
+1. Install dependencies:
+  `bundle install`
+- Setup the db:
+  `rails db:setup`
+- Test (using the default rake task):
+  `rake`
 
-* How to run the test suite
+## Dependencies
+- see [Gemfile](Gemfile)
 
-* Services (job queues, cache servers, search engines, etc.)
+## Services (job queues, cache servers, search engines, etc.)
+- TBD
 
-* Deployment instructions
-
-* ...
+## Deployment instructions
+- TBD

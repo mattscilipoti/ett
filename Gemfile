@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.3.1'
 
 # The 3 main gems: rails, db, app server
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
