@@ -21,6 +21,7 @@ gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 
 group :development, :test do
   gem 'accept_values_for' # Rspec matchers to test ActiveModel validation that follows BDD.
+  gem 'guard-rspec'
   gem 'rspec-rails'
   # Call 'byebug' or `binding.pry` anywhere in the code to stop execution and get a debugger console
   gem 'pry-byebug', platform: :mri
