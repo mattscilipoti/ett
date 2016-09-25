@@ -19,8 +19,8 @@ gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  # Call 'byebug' or `binding.pry` anywhere in the code to stop execution and get a debugger console
+  gem 'pry-byebug', platform: :mri
 end
 
 group :development do
