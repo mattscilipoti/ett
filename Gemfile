@@ -24,7 +24,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'rspec-rails'
   # Call 'byebug' or `binding.pry` anywhere in the code to stop execution and get a debugger console
-  gem 'pry-byebug', platform: :mri
+  gem 'pry-rails', platform: :mri
 end
 
 group :development do

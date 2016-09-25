@@ -43,7 +43,6 @@ GEM
       tzinfo (~> 1.1)
     arel (7.1.2)
     builder (3.2.2)
-    byebug (9.0.5)
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -124,9 +123,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    pry-byebug (3.4.0)
-      byebug (~> 9.0)
-      pry (~> 0.10)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
     puma (3.6.0)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -233,7 +231,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
-  pry-byebug
+  pry-rails
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
   rspec-rails
