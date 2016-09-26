@@ -1,0 +1,9 @@
+%h1 Reports
+
+%ul#reports
+  - for report in @reports
+    %li
+      = link_to(report.started_at, report_path(report))
+      = "| Task ct: #{report.tasks.count}"
+      - if report.memo
+        = "| #{report.memo}"

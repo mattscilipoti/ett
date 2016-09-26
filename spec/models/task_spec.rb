@@ -7,5 +7,4 @@ RSpec.describe Task, type: :model do
     it { should accept_values_for(:name, 'Timecard', 'View Space') }
     it { should_not accept_values_for(:name, nil, " ") }
   end
-
 end

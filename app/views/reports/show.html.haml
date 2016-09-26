@@ -1,0 +1,7 @@
+%h1 Report for #{@report.started_at}
+
+%h2= @report.memo
+
+%ul#tasks
+  - for task in @report.tasks
+    %li= task.name
