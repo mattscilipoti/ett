@@ -1,0 +1,25 @@
+%h1
+  Start time: #{@report.started_at.to_s(:short)}
+
+%section#tasks
+  %ul
+    - for task in @report.tasks
+      %li
+        =task.name
+
+    %li
+      %ul.inline-list
+        %li
+          - col_size_for_task_name = 2
+          - new_task = @report.tasks.build
+          = simple_fields_for new_task do |new_task_field|
+            =new_task_field.input_field :name, placeholder: 'New Task Name', size: 20
+
+        - @report.possible_occurrences(new_task).each_with_index do |possible_occurrence, index|
+          %li
+            - col_size = index + col_size_for_task_name + 1
+            = simple_form_for [@report, possible_occurrence], wrapper: :inline_form  do |f|
+              -# = debug(f.object)
+              = hidden_field_tag 'task[name]'
+              = f.hidden_field :started_at
+              = f.button :submit, 'O'
