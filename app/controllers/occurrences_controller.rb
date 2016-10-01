@@ -2,10 +2,10 @@ class OccurrencesController < ApplicationController
   def create
     @report = Report.find(params[:report_id])
 
-    if occurrence_params[:task_id]
+    if occurrence_params[:task_id].present?
       @occurrence = @report.occurrences.create!(occurrence_params)
     else
-      task = @report.tasks.where(task_params).first || Task.create!(task_params)
+      task = Task.where(task_params).first_or_create
       @occurrence = @report.occurrences.create!(occurrence_params.merge(task: task))
     end
 
@@ -32,7 +32,7 @@ class OccurrencesController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:task_id)
+    params.require(:task).permit(:name)
   end
 
 end
