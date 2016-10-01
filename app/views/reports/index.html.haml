@@ -1,9 +1,16 @@
 %h1 Reports
 
-%ul#reports
-  - for report in @reports
-    %li
-      = link_to(report.started_at, report_path(report))
-      = "| Task ct: #{report.tasks.count}"
-      - if report.memo
-        = "| #{report.memo}"
+%table#reports
+  %thead
+    %th Started At
+    %th Task Ct.
+    %th Memo
+  %tbody
+    - for report in @reports
+      %tr
+        %td
+          = link_to(report.started_at.to_formatted_s(:dow_with_long), report_path(report))
+        %td
+          = report.tasks.size
+        %td
+          = report.memo
