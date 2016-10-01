@@ -27,9 +27,7 @@ class Report < ApplicationRecord
       end_time = started_at + report_duration
       possibilites = []
       while stepper < end_time
-        logger.debug("stepper: #{stepper}")
         occurrence = occurrences.where(task: task, started_at: stepper, duration: occurrence_duration).first_or_initialize
-        logger.debug("occurence: #{occurrence.new_record?}")
         possibilites << occurrence
         stepper += occurrence_duration
       end
