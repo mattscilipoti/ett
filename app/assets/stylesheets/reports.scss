@@ -18,4 +18,8 @@ thead th, tbody td {
 
 th {
   font-size: 0.76em;
+  border-right: 1px dotted gray;
+  &:first-child {
+    width: 100px;
+  }
 }

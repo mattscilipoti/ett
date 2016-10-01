@@ -1,9 +1,9 @@
 %tr
-  %td
-    - if task.name
-      = task.name
+  %td{title: task.name}
+    - if task.new_record?
+      = text_field_tag 'task[name]', task.name, id: 'new_task_name', placeholder: 'Task Name'
     - else
-      = text_field_tag 'task[name]', 'New Task', id: 'new_task_name', placeholder: 'Task Name'
+      = task.name
 
   - possible_occurrences.each_with_index do |possible_occurrence, index|
     %td

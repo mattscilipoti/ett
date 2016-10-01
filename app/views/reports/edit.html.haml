@@ -2,7 +2,7 @@
   Tracking #{@report.started_at.strftime("%a, %e %b %Y %H:%M:%S %z")}
 
 -# Used for headers and new row
-- new_task = @report.tasks.build
+- new_task = @report.tasks.build(name: 'New Task')
 - possible_occurrences = @report.possible_occurrences(new_task)
 %section#tasks
   %table.table.hover{role: "grid"}
