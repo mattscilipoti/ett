@@ -11,7 +11,7 @@ RSpec.describe Report, type: :model do
   describe '(class methods)' do
     describe '.with_start_time' do
       it 'defaults to today at 9am' do
-        expect(Report.with_start_time.started_at).to be_within(1).of(DateTime.current.change({ hour: 9 }))
+        expect(Report.with_start_time.started_at).to be_within(1).of(Time.current.change({ hour: 9 }))
       end
     end
   end

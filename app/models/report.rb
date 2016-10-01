@@ -48,7 +48,7 @@ class Report < ApplicationRecord
 
   def self.with_start_time(start_hour=9)
     Report.new({
-      started_at: DateTime.current.change({ hour: start_hour })
+      started_at: Time.current.change({ hour: start_hour })
     })
   end
 end

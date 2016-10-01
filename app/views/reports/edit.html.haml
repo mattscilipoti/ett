@@ -1,5 +1,5 @@
 %h1
-  Tracking #{@report.started_at.strftime("%a, %e %b %Y %H:%M:%S %z")}
+  Tracking #{@report.started_at.to_formatted_s(:dow_with_long)}
   = link_to report_path(@report) do
     %i.fi-page
 
