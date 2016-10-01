@@ -1,5 +1,7 @@
 %h1
   Tracking #{@report.started_at.strftime("%a, %e %b %Y %H:%M:%S %z")}
+  = link_to report_path(@report) do
+    %i.fi-page
 
 -# Used for headers and new row
 - new_task = @report.tasks.build(name: 'New Task')

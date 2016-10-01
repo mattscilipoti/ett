@@ -1,5 +1,8 @@
 %h1
   Tracking #{@report.started_at.strftime("%a, %e %b %Y %H:%M:%S %z")}
+  = link_to edit_report_path(@report) do
+    %i.fi-page-edit
+
 
 %section#tasks
   %table
