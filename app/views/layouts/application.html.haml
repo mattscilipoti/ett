@@ -10,6 +10,7 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    = render 'layouts/nav_bar'
     -# TODO: update for foundation, dismissable
     -#   An example: https://gist.github.com/roberto/3344628
     %section#flashMessages
