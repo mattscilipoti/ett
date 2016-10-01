@@ -5,12 +5,11 @@
     %th Started At
     %th Task Ct.
     %th Memo
+    %th
   %tbody
     - for report in @reports
       %tr
-        %td
-          = link_to(report.started_at.to_formatted_s(:dow_with_long), report_path(report))
-        %td
-          = report.tasks.size
-        %td
-          = report.memo
+        %td= link_to(report.started_at.to_formatted_s(:dow_with_long), report_path(report))
+        %td= report.tasks.size
+        %td= report.memo
+        %td= button_to 'Delete', report_path(report), class: 'button alert', method: 'delete', data: { confirm: 'Are you sure?', disable_with: 'loading...' }
