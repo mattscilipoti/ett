@@ -13,8 +13,5 @@
     = render 'layouts/nav_bar'
     -# TODO: update for foundation, dismissable
     -#   An example: https://gist.github.com/roberto/3344628
-    %section#flashMessages
-      -flash.each do |key, value|
-        %p.flash{class: "alert-#{key}"}= value
-
+    = display_flash_messages
     = yield

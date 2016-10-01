@@ -21,7 +21,7 @@ class OccurrencesController < ApplicationController
   def destroy
     @occurrence = Occurrence.find(params[:id]).destroy
     report = @occurrence.report
-    flash[:success] = "Occurrence deleted"
+    flash[:warning] = "Occurrence deleted successfully."
     redirect_to edit_report_url(report)
   end
 
