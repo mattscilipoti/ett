@@ -1,5 +1,5 @@
 class Task < ApplicationRecord
-  has_many :occurrences
+  has_many :occurrences, dependent: :destroy
   has_many :reports, through: :occurrences
-  validates_presence_of :name
+  validates :name, presence: true, uniqueness: true
 end
