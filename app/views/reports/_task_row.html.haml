@@ -5,7 +5,7 @@
     - else
       = task.name
 
-  - possible_occurrences.each_with_index do |possible_occurrence, index|
+  - possible_occurrences.each do |started_at, possible_occurrence|
     %td
       - if possible_occurrence.new_record?
         = simple_form_for [@report, possible_occurrence], wrapper: :inline_form  do |f|

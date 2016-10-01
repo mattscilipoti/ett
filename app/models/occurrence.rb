@@ -9,4 +9,8 @@ class Occurrence < ApplicationRecord
       only_integer: true,
       greater_than: 0
     }
+
+  def self.within_range(task, range_start, range_end)
+    where(task: task).where('started_at >= :range_start and started_at < :range_end ', range_start: range_start, range_end: range_end)
+  end
 end

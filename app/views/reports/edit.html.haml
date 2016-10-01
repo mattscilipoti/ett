@@ -3,13 +3,13 @@
 
 -# Used for headers and new row
 - new_task = @report.tasks.build(name: 'New Task')
-- possible_occurrences = @report.possible_occurrences(new_task)
+- possible_occurrences = @report.merged_occurrences(new_task)
 %section#tasks
   %table.table.hover{role: "grid"}
     %thead
       %th Task Name
-      - for occurrence in possible_occurrences
-        %th= occurrence.started_at.strftime('%H:%M')
+      - possible_occurrences.each do |started_at, possible_occurrence|
+        %th= possible_occurrence.started_at.strftime('%H:%M')
     %tbody
       - for task in @report.tasks
-        = render partial: 'task_row', locals: { task: task, possible_occurrences: @report.possible_occurrences(task) }
+        = render partial: 'task_row', locals: { task: task, possible_occurrences: @report.merged_occurrences(task) }

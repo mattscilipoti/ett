@@ -4,14 +4,25 @@ class Report < ApplicationRecord
   validates_presence_of :started_at
 
   def duration
-    2.hours
+    3.hours
+  end
+
+  def ended_at
+    started_at + duration
   end
 
   def occurrence_duration
     15.minutes
   end
 
-  def possible_occurrences(task, report_duration = self.duration)
+  def merged_occurrences(task)
+    # merge a hash of possible occurrences and actual occurrences, keyed on started_at
+    occurrences_within_range = occurrences.within_range(task, started_at, ended_at).index_by(&:started_at)
+    possible_occurrences = possible_occurrences(task).index_by(&:started_at)
+    possible_occurrences.merge(occurrences_within_range)
+  end
+
+  def possible_occurrences(task)
     # logger.debug("po.task: #{task}")
     task = case task
     when String
@@ -24,10 +35,10 @@ class Report < ApplicationRecord
 
     # @possible_occurrences ||= begin
       stepper = started_at
-      end_time = started_at + report_duration
+      end_time = started_at + self.duration
       possibilites = []
       while stepper < end_time
-        occurrence = occurrences.where(task: task, started_at: stepper, duration: occurrence_duration).first_or_initialize
+        occurrence = occurrences.build(task: task, started_at: stepper, duration: occurrence_duration)
         possibilites << occurrence
         stepper += occurrence_duration
       end

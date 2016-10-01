@@ -5,14 +5,14 @@
   %table
     %thead
       %th Task Name
-      - for occurrence in @report.possible_occurrences('header', 2.hours)
-        %th= occurrence.started_at.strftime('%H:%M')
+      - @report.merged_occurrences('header', 2.hours).each do |started_at, possible_occurrence|
+        %th= possible_occurrence.started_at.strftime('%H:%M')
     %tbody
       - for task in @report.tasks
         %tr
           %td
             = task.name
 
-          - @report.possible_occurrences(task, 2.hours).each_with_index do |possible_occurrence, index|
+          - @report.merged_occurrences(task, 2.hours).each do |started_at, possible_occurrence|
             %td
               = possible_occurrence.new_record? ? '0' : 'X'
