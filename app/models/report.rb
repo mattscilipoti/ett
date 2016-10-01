@@ -1,7 +1,7 @@
 class Report < ApplicationRecord
   has_many :occurrences, dependent: :destroy
   has_many :tasks, -> { distinct }, through: :occurrences
-  validates_presence_of :started_at
+  validates :started_at, presence: true, uniqueness: true
 
   def duration
     3.hours
@@ -47,8 +47,9 @@ class Report < ApplicationRecord
   end
 
   def self.with_start_time(start_hour=9)
-    Report.new({
-      started_at: Time.current.change({ hour: start_hour })
+    start_of_work_day = Time.current.beginning_of_day.change({ hour: start_hour })
+    Report.find_or_create_by!({
+      started_at: start_of_work_day
     })
   end
 end
