@@ -1,6 +1,6 @@
 %h1
   Tracking #{@report.started_at.to_formatted_s(:dow_with_long)}
-  = link_to edit_report_path(@report) do
+  = link_to edit_report_path(@report), title: 'Edit' do
     %i.fi-page-edit
 
 
@@ -18,4 +18,7 @@
 
           - @report.merged_occurrences(task).each do |started_at, possible_occurrence|
             %td
-              = possible_occurrence.new_record? ? '0' : 'X'
+              - if possible_occurrence.new_record?
+                O
+              - else
+                %i.fi-x-circle

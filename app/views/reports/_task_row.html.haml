@@ -3,7 +3,7 @@
     - if task.new_record?
       = text_field_tag 'task[name]', task.name, id: 'new_task_name', placeholder: 'Task Name'
     - else
-      = link_to task.name, edit_task_path(task)
+      = link_to task.name, edit_task_path(task), title: "Edit #{task.name}"
 
   - possible_occurrences.each do |started_at, possible_occurrence|
     %td
@@ -13,7 +13,7 @@
           = hidden_field_tag 'task[name]', task.name
           = f.hidden_field :task_id
           = f.hidden_field :started_at
-          = f.button :submit, 'O'
+          = f.button :submit, 'O', title: 'Create'
 
       - else
-        = button_to "X", possible_occurrence, method: :delete
+        = button_to 'X', possible_occurrence, class: 'button warning', method: :delete, title: 'Remove'

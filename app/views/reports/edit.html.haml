@@ -1,6 +1,6 @@
 %h1
   Tracking #{@report.started_at.to_formatted_s(:dow_with_long)}
-  = link_to report_path(@report) do
+  = link_to report_path(@report), title: 'Show' do
     %i.fi-page
 
 -# Used for headers and new row
