@@ -9,19 +9,4 @@
         %th= occurrence.started_at.strftime('%H:%M')
     %tbody
       - for task in @report.tasks
-        %tr
-          %td
-            = task.name
-
-          - @report.possible_occurrences(task).each_with_index do |possible_occurrence, index|
-            %td
-              - if possible_occurrence.new_record?
-                = simple_form_for [@report, possible_occurrence], wrapper: :inline_form  do |f|
-                  -# = debug(f.object)
-                  -# = hidden_field_tag 'task[name]', task.name
-                  = f.hidden_field :task_id
-                  = f.hidden_field :started_at
-                  = f.button :submit, 'O'
-
-              - else
-                = button_to "X", possible_occurrence, method: :delete
+        = render partial: 'task_row', locals: { task: task, possible_occurrences: @report.possible_occurrences(task) }
