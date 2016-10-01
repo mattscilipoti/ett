@@ -1,0 +1,21 @@
+// Place all the styles related to the Reports controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+thead th, tbody td {
+  padding: 0;
+  text-align: center;
+  width: 50px;
+  form {
+    display: inline-block;
+  }
+  input[type=submit] {
+    margin: auto;
+    padding: 4px 6px;
+    // text-align: center;
+  }
+}
+
+th {
+  font-size: 0.76em;
+}

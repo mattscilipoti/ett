@@ -2,10 +2,10 @@
   Tracking #{@report.started_at.strftime("%a, %e %b %Y %H:%M:%S %z")}
 
 %section#tasks
-  %table
+  %table.table.hover{role: "grid"}
     %thead
       %th Task Name
-      - for occurrence in @report.possible_occurrences('header', 2.hours)
+      - for occurrence in @report.possible_occurrences('header')
         %th= occurrence.started_at.strftime('%H:%M')
     %tbody
       - for task in @report.tasks
@@ -13,7 +13,7 @@
           %td
             = task.name
 
-          - @report.possible_occurrences(task, 2.hours).each_with_index do |possible_occurrence, index|
+          - @report.possible_occurrences(task).each_with_index do |possible_occurrence, index|
             %td
               - if possible_occurrence.new_record?
                 = simple_form_for [@report, possible_occurrence], wrapper: :inline_form  do |f|

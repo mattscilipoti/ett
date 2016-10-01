@@ -4,7 +4,7 @@ class Report < ApplicationRecord
   validates_presence_of :started_at
 
   def duration
-    9.hours
+    2.hours
   end
 
   def occurrence_duration
