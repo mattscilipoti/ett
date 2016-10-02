@@ -5,8 +5,9 @@ ruby '2.3.1'
 # The 3 main gems: rails, db, app server
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-gem 'sqlite3' # Use sqlite3 as the database for Active Record
 gem 'puma', '~> 3.0' # Use Puma as the app server
+gem 'sqlite3', group: :development # Use sqlite3 as the database for Active Record
+gem 'pg', group: :production
 
 # The rest are sorted alphabetically
 # gem 'bcrypt', '~> 3.1.7' # Use ActiveModel has_secure_password
@@ -34,6 +35,7 @@ group :development, :test do
   # Call 'byebug' or `binding.pry` anywhere in the code to stop execution and get a debugger console
   gem 'pry-byebug' # for debugger and next/step
   gem 'pry-rails', platform: :mri
+
 end
 
 group :development do
