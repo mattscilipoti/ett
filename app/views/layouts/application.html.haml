@@ -11,7 +11,5 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render 'layouts/nav_bar'
-    -# TODO: update for foundation, dismissable
-    -#   An example: https://gist.github.com/roberto/3344628
-    = display_flash_messages
+    = display_flash_messages # see: foundation_rails_helper
     = yield
