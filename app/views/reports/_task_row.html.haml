@@ -13,7 +13,7 @@
           = hidden_field_tag 'task[name]', task.name
           = f.hidden_field :task_id
           = f.hidden_field :started_at
-          = f.button :submit, 'O', title: 'Create'
+          = f.button :submit, 'O', class: 'round', title: 'Create'
 
       - else
-        = button_to 'X', possible_occurrence, class: 'button warning', method: :delete, title: 'Remove'
+        = button_to 'X', possible_occurrence, class: 'button round warning', method: :delete, title: 'Remove'

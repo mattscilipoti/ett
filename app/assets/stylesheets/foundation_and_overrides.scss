@@ -52,3 +52,8 @@
 // @include motion-ui-animations;
 
 @import 'foundation-icons';
+
+// class round didn't work (mms, 10/01/16)
+.round {
+  border-radius: 50%;
+}
