@@ -3,17 +3,22 @@
 %table#reports
   %thead
     %th Started At
+    %th Actions
     %th Task Ct.
     %th Duration
     %th Occurrence Duration
     %th Memo
-    %th
   %tbody
     - for report in @reports
       %tr
-        %td= link_to(report.started_at.to_formatted_s(:dow_with_long), report_path(report))
+        %td
+          = link_to(report.started_at.to_formatted_s(:dow_with_long), report_path(report))
+        %td
+          %a{href: edit_report_path(report), title: 'Edit'}
+            %i.fi-pencil
+          |
+          = button_to 'X', report_path(report), class: 'button alert round tiny', method: 'delete', data: { confirm: 'Are you sure?', disable_with: 'loading...' }, title: 'Delete'
         %td= report.tasks.size
         %td= report.duration_human
         %td= report.occurrence_duration_human
         %td= report.memo
-        %td= button_to 'Delete', report_path(report), class: 'button alert', method: 'delete', data: { confirm: 'Are you sure?', disable_with: 'loading...' }
