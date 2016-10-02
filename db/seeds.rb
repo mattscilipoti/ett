@@ -13,5 +13,5 @@ DatabaseCleaner.clean_with(:truncation)
 r = Report.with_start_time
 r.save!
 
-t = r.tasks.create!(name: 'TEST TASK')
-t.occurrences.create
+t = Task.create!(name: 'TEST TASK')
+r.occurrences.create!(task: t, started_at: r.started_at)
