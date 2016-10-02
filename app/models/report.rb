@@ -3,17 +3,26 @@ class Report < ApplicationRecord
   has_many :tasks, -> { distinct }, through: :occurrences
   validates :started_at, presence: true, uniqueness: true
 
-  def duration
-    3.hours
+  def duration_human
+    ChronicDuration.output(duration)
+  end
+
+  def duration_human=(value)
+    self.duration = ChronicDuration.parse(value)
   end
 
   def ended_at
     started_at + duration
   end
 
-  def occurrence_duration
-    15.minutes
+  def occurrence_duration_human
+    ChronicDuration.output(occurrence_duration)
   end
+
+  def occurrence_duration_human=(value)
+    self.occurrence_duration = ChronicDuration.parse(value)
+  end
+
 
   def merged_occurrences(task)
     # merge a hash of possible occurrences and actual occurrences, keyed on started_at

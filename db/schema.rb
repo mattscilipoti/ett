@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161001055841) do
+ActiveRecord::Schema.define(version: 20161002003720) do
 
   create_table "occurrences", force: :cascade do |t|
     t.integer  "report_id"
@@ -25,10 +25,12 @@ ActiveRecord::Schema.define(version: 20161001055841) do
   end
 
   create_table "reports", force: :cascade do |t|
-    t.datetime "started_at", null: false
+    t.datetime "started_at",                          null: false
     t.string   "memo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "duration",            default: 32400, null: false
+    t.integer  "occurrence_duration", default: 900,   null: false
   end
 
   create_table "tasks", force: :cascade do |t|

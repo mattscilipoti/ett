@@ -10,6 +10,7 @@ gem 'puma', '~> 3.0' # Use Puma as the app server
 
 # The rest are sorted alphabetically
 # gem 'bcrypt', '~> 3.1.7' # Use ActiveModel has_secure_password
+gem 'chronic_duration'
 gem 'coffee-rails', '~> 4.2' # Use CoffeeScript for .coffee assets and views
 gem 'foundation-icons-sass-rails'
 gem 'foundation-rails'

@@ -3,7 +3,6 @@
   = link_to edit_report_path(@report), title: 'Edit' do
     %i.fi-page-edit
 
-
 %section#tasks
   %table
     %thead
@@ -22,3 +21,7 @@
                 O
               - else
                 %i.fi-x-circle
+
+%div.right
+  %span Duration: #{ChronicDuration.output(@report.duration)}
+  %span Occurrence Duration: #{ChronicDuration.output(@report.occurrence_duration)}

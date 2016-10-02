@@ -22,4 +22,21 @@ class ReportsController < ApplicationController
   def show
     @report = Report.find(params[:id])
   end
+
+  def update
+    @report = Report.find(params[:id])
+    if @report.update(report_params)
+      redirect_to reports_url
+    else
+      render 'edit'
+    end
+  end
+
+
+  private
+
+  def report_params
+    params.require(:report).permit(:duration_human, :occurrence_duration_human)
+  end
+
 end
