@@ -4,7 +4,7 @@
     %i.fi-page
 
 -# Used for headers and new row
-- new_task = @report.tasks.build(name: 'New Task')
+- new_task = Task.new(name: 'New Task')
 - possible_occurrences = @report.merged_occurrences(new_task)
 %section#tasks
   %table.table.hover{role: "grid"}
@@ -15,6 +15,8 @@
     %tbody
       - for task in @report.tasks
         = render partial: 'task_row', locals: { task: task, possible_occurrences: @report.merged_occurrences(task) }
+      
+      = render partial: 'task_row', locals: { report: @report, task: new_task, possible_occurrences: possible_occurrences }
 
 %div
   = simple_form_for @report do |f|

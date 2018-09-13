@@ -8,7 +8,7 @@
   - possible_occurrences.each do |started_at, possible_occurrence|
     %td
       - if possible_occurrence.new_record?
-        = simple_form_for [@report, possible_occurrence], wrapper: :inline_form  do |f|
+        = simple_form_for [report, possible_occurrence], wrapper: :inline_form  do |f|
           -# = debug(f.object)
           = hidden_field_tag 'task[name]', task.name
           = f.hidden_field :task_id

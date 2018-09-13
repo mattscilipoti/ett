@@ -10,17 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161002003720) do
+ActiveRecord::Schema.define(version: 20161003025801) do
 
   create_table "occurrences", force: :cascade do |t|
-    t.integer  "report_id"
     t.integer  "task_id"
     t.datetime "started_at",               null: false
     t.integer  "duration",   default: 900, null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.index ["report_id", "task_id", "started_at", "duration"], name: "possible_occurrences", unique: true
-    t.index ["report_id"], name: "index_occurrences_on_report_id"
+    t.index ["task_id", "started_at", "duration"], name: "possible_occurrences", unique: true
     t.index ["task_id"], name: "index_occurrences_on_task_id"
   end
 

@@ -1,12 +1,10 @@
 class OccurrencesController < ApplicationController
   def create
-    @report = Report.find(params[:report_id])
-
     if occurrence_params[:task_id].present?
-      @occurrence = @report.occurrences.create!(occurrence_params)
+      @occurrence = Occurrence.create!(occurrence_params)
     else
       task = Task.where(task_params).first_or_create
-      @occurrence = @report.occurrences.create!(occurrence_params.merge(task: task))
+      @occurrence = task.occurrences.create!(occurrence_params)
     end
 
     if @occurrence.save
