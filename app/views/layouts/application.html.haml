@@ -6,9 +6,9 @@
 
     %title= content_for?(:title) ? yield(:title) : "ETT"
 
-    = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = csrf_meta_tags
   %body
     = render 'layouts/nav_bar'
     = display_flash_messages # see: foundation_rails_helper

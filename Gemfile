@@ -16,7 +16,7 @@ gem 'chronic_duration'
 gem 'coffee-rails', '~> 4.2' # Use CoffeeScript for .coffee assets and views
 gem 'foundation-icons-sass-rails'
 gem 'foundation-rails'
-gem 'foundation_rails_helper', git: 'https://github.com/sgruhier/foundation_rails_helper.git' # waiting for 3.0 release
+gem 'foundation_rails_helper'
 gem 'haml-rails' # compact view templates
 gem 'jbuilder', '~> 2.5' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jquery-rails' # Use jquery as the JavaScript library
