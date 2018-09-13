@@ -4,13 +4,14 @@ ruby '2.5.1'
 
 # The 3 main gems: rails, db, app server
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'rails', '~> 5.2', '>= 5.2.1'
 gem 'puma', '~> 3.12' # Use Puma as the app server
 gem 'sqlite3', group: :development # Use sqlite3 as the database for Active Record
 gem 'pg', group: :production
 
 # The rest are sorted alphabetically
 # gem 'bcrypt', '~> 3.1.7' # Use ActiveModel has_secure_password
+gem 'bootsnap', require: false
 gem 'chronic_duration'
 gem 'coffee-rails', '~> 4.2' # Use CoffeeScript for .coffee assets and views
 gem 'foundation-icons-sass-rails'
