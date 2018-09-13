@@ -17,3 +17,5 @@
 //= require_tree .
 //= require foundation_init
 //= require turbolinks
+
+$(function(){ $(document).foundation(); });
