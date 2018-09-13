@@ -8,10 +8,10 @@ Where does all my time go?
 
 # For Fellow Developers
 
+[![Build Status](https://travis-ci.org/mattscilipoti/ett.svg?branch=master)](https://travis-ci.org/mattscilipoti/ett)
 [![Code Climate GPA](https://codeclimate.com/github/mattscilipoti/ett/badges/gpa.svg)](https://codeclimate.com/github/mattscilipoti/ett)
 [![Issue Count](https://codeclimate.com/github/mattscilipoti/ett/badges/issue_count.svg)](https://codeclimate.com/github/mattscilipoti/ett)
 [![Test Coverage](https://codeclimate.com/github/mattscilipoti/ett/badges/coverage.svg)](https://codeclimate.com/github/mattscilipoti/ett/coverage)
-[![Dependency Status](https://gemnasium.com/badges/github.com/mattscilipoti/ett.svg)](https://gemnasium.com/github.com/mattscilipoti/ett)
 
 
 ## Initial Setup
